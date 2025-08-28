@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name}}</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .product { border: 1px solid #ccc; padding: 15px; border-radius: 8px; }
+        a { text-decoration: none; color: blue}
+    </style>
+
+</head>
+<body>
+    <h1>{{ product.name}}</h1>
+    <div class="product">
+        <p><strong>Price:</strong> ${{product.price }}</p>
+        <p><strong>Category:</strong> {{ product.category.name }}</p>
+        <p>{{ product.description }}</p>
+    </div>
+    <p><a href="/">⬅ Back to catalog</a></p>
+
+
+</body>
+</html>
