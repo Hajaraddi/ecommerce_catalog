@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple E-Commerce Catalog</title>
+    <style>
+        body {font-family:Arial, sans-serif; padding:20px; }
+        h1{color: #333;}
+        .category, .product{ border:1px solid #ccc; padding:10px; margin:5px; display: inline_block;}
+        
+    </style>
+</head>
+<body>
+    <h1>Categories</h1>
+    <div>
+        {% for category in categories %}
+        <div class=""category>
+            <strong>{{ category.name}}</strong>
+        </div>
+         {% empty %}
+         <p>No categories yet.</p>
+         {% endfor%}
+
+   </div>
+   <h1>Products</h1>
+   <div>
+    {% for products in products %}
+    <div class = "product">
+        <strong>{{ product.name }}</strong><br>
+        Price: ${{ product.price }} <br>
+        Category: {{ product.category.name }} <br>
+        {{ product.description|truncatechars:50 }}
+    </div>
+    {% empty %}
+    <p>No products yes.</p>
+    {% endfor %}
+   </div>
+</body>
+</html>
