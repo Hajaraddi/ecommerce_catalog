@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'products',
-    
+   
 ]
 
 MIDDLEWARE = [
@@ -139,3 +139,5 @@ TEMPLATES = [
         },
     },
 ]
+
+#TAILWIND_APP_NAME = 'theme'
