@@ -36,12 +36,14 @@ class ProductListView(generics.ListAPIView):
     def get_queryset(self):
         queryset = Product.objects.all()
         category_id = self.request.query_params.get('category')
-        search = self.request.query__params.get('search')
+        search = self.request.query_params.get('search')
+
         if category_id:
             queryset = queryset.filter(category_id=category_id)
         if search: 
-            queryset = queryset.filter(name__incotains=search)
-            return queryset
+           queryset = queryset.filter(name__icontains=search)
+
+        return queryset
         
 #Product details        
 class ProductDetailView(generics.RetrieveAPIView):
